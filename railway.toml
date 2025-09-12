@@ -1,0 +1,14 @@
+[build]
+builder = "Dockerfile"
+
+[deploy]
+numReplicas = 1
+startCommand = "uvicorn app.api.main:app --host 0.0.0.0 --port 8080"
+
+[variables]
+MODE = "paper"
+SYMBOL = "BTCUSDT"
+VENUE = "bybit"
+USE_TESTNET = "true"
+# Set DATABASE_URL for Postgres in Railway; falls back to SQLite if not set
+# DATABASE_URL = "postgresql+psycopg2://user:pass@host:port/dbname"
